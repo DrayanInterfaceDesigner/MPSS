@@ -20,10 +20,10 @@ chamar as autoridates -->
             <canvas id="camera"></canvas>
         </div>
         
-        <div class="surveillance__monitorament">
-            <div class="monitorament__tabs">
+        <div class="surveillance__monitoring">
+            <div class="monitoring__tabs">
                 {% for name, diagnosis in device %}
-                <div class="monitorament__tabs__tab">
+                <div class="monitoring__tabs__tab">
                     <p class="tab__name">{{name}}</p>
                     <div class="tab__monitor">
                         <form action="/switch" method="post">
