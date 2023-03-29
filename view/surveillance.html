@@ -1,0 +1,49 @@
+    <!-- Pra cada botao
+    ligar/desligar
+    monitoramento do dispositivo 
+imagem
+
+chamar as autoridates -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surveillance</title>
+</head>
+<body>
+
+    <div class="surveillance">
+        <div class="surveillance__camera">
+            <canvas id="camera"></canvas>
+        </div>
+        
+        <div class="surveillance__monitorament">
+            <div class="monitorament__tabs">
+                {% for name, diagnosis in device %}
+                <div class="monitorament__tabs__tab">
+                    <p class="tab__name">{{name}}</p>
+                    <div class="tab__monitor">
+                        <form action="/switch" method="post">
+                            <button class="switch__button">(0)</button>  
+                        </form>
+                        <div class="diagnosis">
+                            <canvas id={{diagnosis}}></canvas>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="surveillance__emergency">
+            <form action="/emergency" method="post">
+                <button class="emergency__button">(0)</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

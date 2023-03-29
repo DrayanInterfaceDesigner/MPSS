@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPSS</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MPSS</h1>
+            <h2>the best you can have rn.</h2>
+        </div>
+        <div class="menu__dropdown">
+            {% block menu__options %} {% endblock %}
+        </div>
+    </header>
+
+    <main>
+        {% block main %} {% endblock %}
+    </main>
+
+    <footer>
+        <p class="copyright">MPSS - all rights reserved</p>
+        <p class="footer_warning">
+            we do not take responsability for your life and we will not actually 
+            call anyone to help you, no one... can... help you.
+        </p>
+    </footer>
+</body>
+</html>

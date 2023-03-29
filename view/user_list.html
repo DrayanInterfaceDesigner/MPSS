@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block middle %}
+    <div class="user__list">
+        <div class="user__list__users">
+            {% for name in users %}
+                <div class="user__list__users__name">
+                    <svg class="user__icon"></svg>
+                    <p class="user__name">{{name}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

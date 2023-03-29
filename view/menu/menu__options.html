@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block menu__options %}
+
+<div class="options">
+    
+    {% for addr, name in menu %}
+        <div class="option"><a href={{addr}}>{{name}}</a></div>
+    {% endfor %}
+    
+</div>
+
+
+{% endblock %}

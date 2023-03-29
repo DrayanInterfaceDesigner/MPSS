@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block middle %}
+    <div class="login">
+
+        <form action="/login/auth" method="post">
+            <p class="input__label">Username</p>
+            <input type="text" name="username" id="username" placeholder="are you there?">
+            <p class="input__label">Password</p>
+            <input type="password" name="password" id="password" placeholder="w~ aR% c0mm1&n~g">
+            <button type="submit" value="Login">Login</button>
+        </form>
+
+    </div>
+{% endblock %}
