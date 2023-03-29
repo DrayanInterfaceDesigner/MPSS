@@ -8,4 +8,4 @@ def register():
 
 @_register.route("/create", methods=["GET"])
 def create():
-    return redirect("login.html")
+    return redirect("/login")
