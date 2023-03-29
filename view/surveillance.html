@@ -14,7 +14,7 @@ chamar as autoridates -->
         
         <div class="surveillance__monitoring">
             <div class="monitoring__tabs">
-                {% for name, diagnosis in device %}
+                {% for name, diagnosis in devices %}
                 <div class="monitoring__tabs__tab">
                     <p class="tab__name">{{name}}</p>
                     <div class="tab__monitor">
@@ -32,7 +32,7 @@ chamar as autoridates -->
 
         <div class="surveillance__emergency">
             <form action="/emergency" method="post">
-                <button class="emergency__button">(0)</button>
+                <button class="emergency__button">[190]</button>
             </form>
         </div>
     </div>
