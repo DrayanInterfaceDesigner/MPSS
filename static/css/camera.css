@@ -1,0 +1,21 @@
+#camera {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: brightness(100%) contrast(130%) saturate(500%);
+}
+.surveillance__camera {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+.tx_radial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center center, transparent 0%, black 100%);
+    z-index: 99;
+}

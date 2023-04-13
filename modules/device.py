@@ -6,7 +6,7 @@ _device = Blueprint("device", __name__, static_folder="../static", template_fold
 data = get_list("../../model/devices.json")
 devices = []
 for device in data['devices']:
-    devices.append({"id": device["id"], "name": device["device name"]})
+    devices.append({"id": device["id"], "name": device["name"]})
 
 @_device.route("/list", methods=["GET"])
 def device_list():
