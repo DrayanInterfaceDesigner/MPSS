@@ -1,0 +1,30 @@
+Prof Antonio, mandei uma solicitação pra você no email antonio.david@pucpr.br pra entrar como ADM no 
+https://mpss.atlassian.net/jira/software/projects/MPSS/boards/1
+
+
+
+
+
+
+
+Um sistema de segurança que detecta seres ficticios do mito de terror popular
+da internet chamado "Mandela Catalogue", recriando a atmosfera da obra e
+brincando com o imaginário do grupo.
+
+Será necessário possuir cadastro de usuários, o uso de uma webcam para obtenção
+da imagem, os dados de sensores (estado ligado/desligado e frequencia se houver).
+
+FD
+O css será feito manualmente, e talvez com o uso do pre-processor sass.
+
+Sass facilita o uso do css com a criação de mixins e modulos, além
+do simplificado nesting imbutido.
+
+O grupo possui muita experiência com css puro.
+O uso de css ou scss costuma ser mais prático e dar muita liberdade
+para o desenvolvedor quando esse já tem domínio. É menos poluído
+que frameworks como TailWind, Bourbon e Bootstrap.
+
+
+
+
