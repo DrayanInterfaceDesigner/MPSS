@@ -1,9 +1,3 @@
-    <!-- Pra cada botao
-    ligar/desligar
-    monitoramento do dispositivo 
-imagem
-
-chamar as autoridates -->
 {% extends "base.html" %}
 
 {% block main %}
@@ -36,6 +30,9 @@ chamar as autoridates -->
             </form>
         </div>
     </div>
+    <video autoplay muted hidden id="videoelement"></video>
+    <script defer type="module" src="{{url_for('static', filename='js/Camera.js')}}"></script>
+    <script defer type="module" src="{{url_for('static', filename='js/main.js')}}"></script>
 
 {% endblock %}
 

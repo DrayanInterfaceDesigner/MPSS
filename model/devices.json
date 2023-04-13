@@ -1,0 +1,8 @@
+{
+    "devices" : [
+        {
+            "id" : 1,
+            "name" : "sensor de presença"
+        }
+    ]
+}
