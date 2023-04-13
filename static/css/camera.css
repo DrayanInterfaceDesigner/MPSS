@@ -8,6 +8,7 @@
     position: relative;
     width: fit-content;
     height: fit-content;
+    border: .3rem solid transparent;
 }
 
 .tx_radial {
@@ -18,4 +19,45 @@
     height: 100%;
     background: radial-gradient(circle at center center, transparent 0%, black 100%);
     z-index: 99;
+}
+.text {
+    position: absolute;
+    bottom: 5%;
+    left:   5%;
+    z-index: 101;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.on {
+    position: relative;
+    border: .3rem solid red;
+}
+
+.on::before {
+    content: 'EMERGENCY';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 101;
+    font-size: 3rem;
+    font-weight: 900;
+    color: red;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    animation: oscilate 1.5s linear infinite;
+}
+
+@keyframes oscilate {
+    0% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

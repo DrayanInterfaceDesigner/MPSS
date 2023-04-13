@@ -2,7 +2,7 @@ from flask import Blueprint, render_template
 from modules.controller.list_controller import *
 
 
-_device = Blueprint("device", __name__, static_folder="../static", template_folder="../view")
+_device = Blueprint("devices", __name__, static_folder="../static", template_folder="../view")
 data = get_list("../../model/devices.json")
 devices = []
 for device in data['devices']:

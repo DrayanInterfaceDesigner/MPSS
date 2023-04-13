@@ -2,7 +2,7 @@ import json
 import os
 
 def read_json(file):
-    f = open(file)
+    f = open(file, encoding='utf-8')
     data = json.load(f)
     return data
 

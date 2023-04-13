@@ -3,6 +3,7 @@
 {% block main %}
     <div class="surveillance">
         <div class="surveillance__camera">
+            <p class="text"></p>
             <div class="tx_radial"></div>
                 
             <canvas id="camera"></canvas>
@@ -14,9 +15,7 @@
                 <div class="monitoring__tabs__tab">
                     <p class="tab__name">{{name}}</p>
                     <div class="tab__monitor">
-                        <form action="/switch" method="post">
-                            <button class="switch__button">(0)</button>  
-                        </form>
+                            <button class="switch__button">(simular detecção prototipo)</button>  
                         <div class="diagnosis">
                             <canvas id={{diagnosis}}></canvas>
                         </div>
