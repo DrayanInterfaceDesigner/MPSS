@@ -13,8 +13,8 @@ class Camera {
         })
         const data = img_data.data
         for(let i = 0; i < data.length; i+=4) {
-            data[i] = 0;
-            data[i + 2] = 0;
+            data[i] = 0; // red
+            data[i + 2] = 0; // blue
         }
         this.ctx.putImageData(img_data, 0, 0)
     }

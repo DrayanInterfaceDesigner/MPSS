@@ -1,0 +1,74 @@
+sistemas:
+	usuario cadastro
+	usario listar
+
+	
+
+user
+	login
+	register
+	entities
+	surveillance
+	devices
+	home -+
+	about -+
+
+db
+	user
+		id
+		name
+		email
+		cpf
+		gender
+		brithday
+		celele
+		license
+		[address]
+			id
+			user_id
+			state
+			city
+			country
+			number
+			postal code
+			street
+			complement
+			
+		
+	device
+		id
+		type
+			sensor
+				id
+				mesure
+			camera
+				id
+				resolution
+
+		name 
+		brand
+		model
+		voltage
+		description
+		isActive?
+
+		buceta
+		sexo
+		genero
+		usa oculos?
+		
+
+	entity
+		id
+		iamge
+		name
+		description
+		apparition_datetime
+		
+		
+		
+
+
+
+	
+	
