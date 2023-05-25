@@ -12,3 +12,7 @@ class Device(db.Model):
 
     sensors = db.relationship("Sensor", backref="device", lazy=True)
     cameras = db.relationship("Camera", backref="device", lazy=True)
+
+    def get_devices():
+        devices = Device.query.all()
+        return devices

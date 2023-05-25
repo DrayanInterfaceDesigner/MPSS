@@ -9,7 +9,7 @@
                 <span class="gambiarra"></span>
                 <img class="image" src="{{url_for('static', filename='/assets/images/msn_avatar.png')}}">
             </div>
-            <form class="user__fields" action="/register/create" method="post">
+            <form class="user__fields" action="/register/save" method="POST">
 
                 <input required="required" name="name" id="name"  type="text" placeholder="name">
                 <input required="required" name="email" id="email"  type="email" placeholder="example555@hotmail.com">
@@ -22,7 +22,7 @@
                 <input required="required" name="city" id="city"  type="text" placeholder="city">
                 <input required="required" name="street" id="street"  type="text" placeholder="street">
                 <input required="required" name="number" id="number"  type="text" placeholder="number">
-                <input required="required" name="code" id="code"  type="text" placeholder="postal code">
+                <input required="required" name="zip_code" id="zip_code"  type="text" placeholder="postal code">
                 <input required="required" name="complement" id="complement"  type="text" placeholder="complement">
                 <input required="required" name="password" id="password"  type="password" placeholder="Password">
                 <input required="required" id="pwrpt" type="password" placeholder="Repeat your password">

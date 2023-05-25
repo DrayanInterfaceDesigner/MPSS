@@ -16,13 +16,13 @@
                     <th class="list__table__title">Description</th>
                     <th class="list__table__title">First Seen</th>
                 </tr>
-                {% for device in devices %}
+                {% for entity in entities %}
                     <tr class="list__table__content">
                         <!-- <svg class="user__icon"></svg> -->
-                        <td class="list__table__title">{{device.id}}</td>
-                        <td class="list__table__title">{{device.name}}</td>
-                        <td class="list__table__title">{{device.description}}</td>
-                        <td class="list__table__title">{{device.first_seen}}</td>
+                        <td class="list__table__title">{{entity.id}}</td>
+                        <td class="list__table__title">{{entity.name}}</td>
+                        <td class="list__table__title">{{entity.description}}</td>
+                        <td class="list__table__title">{{entity.first_seen}}</td>
                     </tr>
                 {% endfor %}
                 

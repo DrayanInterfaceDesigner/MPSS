@@ -1,0 +1,33 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(12, 12, 12);
+    height: 100%;
+}
+
+.presentation__container, .login__warning__container {
+    width: 50%;
+    padding: 2rem;
+}
+
+.login__warning__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(216, 138, 21); */
+}
+
+.presentation__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blueviolet; */
+}
+
+.presentation {
+    width: 80%;
+}
+.login_warning {
+    max-width: 50%;
+    /* background-color: antiquewhite; */
+}
