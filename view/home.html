@@ -1,31 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPSS</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    <div class="app">
-        <div class="presentation">
-            <h1>MPSS</h1>
-            <h2>Mandela Protocol Security System</h2>
-
-            <p>
-                Hi, you just acquired a brand new MPSS for your house.
-                We are the only security system that can detect alternates
-                near to your house.
-                Don't worry, we will protect you. 
-            </p>
-        </div>
-        <div class="login_warning">
-            <h1>First of all, we need you to login.</h1>
-            <a href="/login">Go to login</a>
-        </div>
-        
-    </div>
+{% block main %}
+    <div class="presentation">
+        <h1>MPSS</h1>
+        <h2>Mandela Protocol Security System</h2>
     
-</body>
-</html>
+        <p>
+            Hi, you just acquired a brand new MPSS for your house.
+            We are the only security system that can detect alternates
+            near to your house.
+            Don't worry, we will protect you. 
+        </p>
+    </div>
+    <div class="login_warning">
+        <h1>First of all, we need you to login.</h1>
+        <a href="/login">Go to login</a>
+    </div>
+
+{% endblock %}

@@ -1,20 +1,38 @@
 {% extends "base.html" %}
 
 {% block main %}
-    <div class="list">
-        <p>List:</p>
-        <table class="list__items">
-            <tr>
-                <th>id</th>
-                <th>device</th>
-            </tr>
-            {% for device in devices %}
-                <tr class="item">
-                    <!-- <svg class="user__icon"></svg> -->
-                    <td class="item__info">{{device.id}}</td>
-                    <td class="item__info">{{device.name}}</td>
-                </tr>
-            {% endfor %}
-            </table>
-    </div>
+    <section class="list__window">
+        <div class="list__tab">
+            <img class="list__tab__icon" src="{{url_for('static', filename='/assets/icons/drive_network.png')}}">
+            <p class="list__tab__name">List Devices</p>
+        </div>
+        <div class="list__container">
+            <div class="list">
+                <table class="list__table">
+                    <tr class="list__table__header">
+                        <th class="list__table__title">ID</th>
+                        <th class="list__table__title">Name</th>
+                        <th class="list__table__title">Brand</th>
+                        <th class="list__table__title">Model</th>
+                        <th class="list__table__title">Voltage</th>
+                        <th class="list__table__title">Description</th>
+                        <th class="list__table__title">Status</th>
+                    </tr>
+                    {% for device in devices %}
+                        <tr class="list__table__content">
+                            <!-- <svg class="user__icon"></svg> -->
+                            <td class="list__table__title">{{device.id}}</td>
+                            <td class="list__table__title">{{device.name}}</td>
+                            <td class="list__table__title">{{device.brand}}</td>
+                            <td class="list__table__title">{{device.model}}</td>
+                            <td class="list__table__title">{{device.voltage}}</td>
+                            <td class="list__table__title">{{device.description}}</td>
+                            <td class="list__table__title">{{device.status}}</td>
+                        </tr>
+                    {% endfor %}
+                    
+                </table>
+            </div>
+        </div>
+    </section>
 {% endblock %}

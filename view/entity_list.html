@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<section class="list__window">
+    <div class="list__tab">
+        <img class="list__tab__icon" src="{{url_for('static', filename='/assets/icons/group.png')}}">
+        <p class="list__tab__name">List Intruders</p>
+    </div>
+    <div class="list__container">
+        <div class="list">
+            <table class="list__table">
+                <tr class="list__table__header">
+                    <th class="list__table__title">ID</th>
+                    <th class="list__table__title">Name</th>
+                    <th class="list__table__title">Description</th>
+                    <th class="list__table__title">First Seen</th>
+                </tr>
+                {% for device in devices %}
+                    <tr class="list__table__content">
+                        <!-- <svg class="user__icon"></svg> -->
+                        <td class="list__table__title">{{device.id}}</td>
+                        <td class="list__table__title">{{device.name}}</td>
+                        <td class="list__table__title">{{device.description}}</td>
+                        <td class="list__table__title">{{device.first_seen}}</td>
+                    </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

@@ -5,6 +5,7 @@ from modules.login import _login
 from modules.surveillance import _surveillance
 from modules.user_list import _user_list
 from modules.device import _device
+from modules.intruder import _entity
 
 from model.db import db, instance
 
@@ -25,6 +26,7 @@ def create_app() -> Flask:
     app.register_blueprint(_surveillance, url_prefix="/surveillance")
     app.register_blueprint(_user_list, url_prefix="/user_list")
     app.register_blueprint(_device, url_prefix="/devices")
+    app.register_blueprint(_entity, url_prefix="/entities")
 
     @app.route('/')
     def index():
