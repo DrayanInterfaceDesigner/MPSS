@@ -10,5 +10,5 @@ class Device(db.Model):
     description = db.Column(db.String(512))
     status = db.Column(db.Boolean(), nullable=False, default=False)
 
-    sensor = db.relationship("Sensor", backref="device", lazy=True)
-    camera = db.relationship("Camera", backref="device", lazy=True)
+    sensors = db.relationship("Sensor", backref="device", lazy=True)
+    cameras = db.relationship("Camera", backref="device", lazy=True)

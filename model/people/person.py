@@ -9,5 +9,5 @@ class Person(db.Model):
     birth_date  = db.Column(db.DateTime)
     phone = db.Column(db.String(15))
 
-    user = db.relationship('User', backref='person')
-    address = db.relationship('Address', backref='person')
+    users = db.relationship('User', backref='person')
+    addresses = db.relationship('Address', backref='person')
