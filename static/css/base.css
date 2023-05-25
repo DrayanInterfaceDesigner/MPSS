@@ -1,7 +1,41 @@
 :root {
+    font-family: 'Cinzel', serif;
+    color: var(--text-color);
+    /* font-family: 'Secular One', sans-serif; */
+    --menu-color: rgba(31, 41, 59, 1);
+    --bg-color: rgb(18, 23, 32);
+    --text-color: rgba(216, 221, 230, 1);
+    --text-hover-color: rgb(242, 245, 250);
+}
+
+
+.app {
+    display: grid;
+    grid-template-rows: .3fr 2fr .2fr;
+    grid-template-areas: 
+    "header"
+    "middle"
+    "footer"
+    ;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y: auto;
+
+}
+
+.header {
+    grid-area: header;
+}
+
+.middle {
+    grid-area: middle;
+    max-height: 100%;
+    background: linear-gradient(180deg, rgba(1,1,19,1) 0%, rgba(7,1,85,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
 
-* {
-    box-sizing: border-box;
+.footer {
+    grid-area: footer;
 }

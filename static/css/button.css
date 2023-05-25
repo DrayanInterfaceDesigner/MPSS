@@ -1,0 +1,28 @@
+.button__major {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(137,132,195,1) 0%, rgba(64,59,124,1) 50%, rgba(45,45,88,1) 50%, rgba(15,15,47,1) 100%);
+    border: 2px inset rgb(36, 35, 50);
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0 .8rem;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+}
+
+.button__major:hover {
+    background: linear-gradient(180deg, rgba(15,15,47,1) 0%, rgba(45,45,88,1) 50%, rgba(64,59,124,1) 50%, rgba(137,132,195,1) 100%);
+}
+
+.button__major:active {
+    background: linear-gradient(180deg, rgba(137,132,195,1) 0%, rgba(45,45,88,1) 50%, rgba(64,59,124,1) 50%, rgba(22,19,61,1) 50%, rgba(137,132,195,1) 100%);
+}
+.button__major__text {
+    font-size: .8rem;
+    margin-inline: .6rem;
+}
+.button__major__icon {
+    max-width: 1.4rem;
+}

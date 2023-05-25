@@ -6,39 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPSS</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/background.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/list.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/button.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/footer.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/camera.css')}}">
+
+    <script defer type="module" src="{{url_for('static', filename='js/index.js')}}"></script>
+
+    <!-- <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./background.css">
+    <link rel="stylesheet" href="./list.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./button.css">
+    <link rel="stylesheet" href="./footer.css"> -->
+
+
+
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>MPSS</h1>
-            <h2>the best you can have rn.</h2>
-        </div>
-        <div class="menu__dropdown">
-            <div class="options">
-    
-                <div class="option"><a href="/">home</a></div>
-                <div class="option"><a href="/login">login</a></div>
-                <div class="option"><a href="/register">register user</a></div>
-                <div class="option"><a href="/devices/register">register device</a></div>
-                <div class="option"><a href="/user_list">user list</a></div>
-                <div class="option"><a href="/devices/list">device list</a></div>
-                <div class="option"><a href="/surveillance">surveillance</a></div>
-            
-            </div>
-        </div>
-    </header>
 
-    <main>
+    <div class="bg"></div>
+    <div class="app">
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <a class="navbar__logo__link" href="#"><img class="navbar__logo__img" src="{{url_for('static', filename='/assets/images/logo.png')}}"></a>
+            </div>
+            <div class="navbar__menu">
+                <a href="/" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/house.png')}}">
+                    <p class="button__major__text">HOME</p>
+                </a>
+                <a href="/login" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/status_online.png')}}">
+                    <p class="button__major__text">LOGIN</p>
+                </a>
+                <a href="/register" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/door_in.png')}}">
+                    <p class="button__major__text">SIGN UP</p>
+                </a>
+                <a href="/devices/register" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/drive_add.png')}}">
+                    <p class="button__major__text">REGISTER DEVICES</p>
+                </a>
+                <a href="/entities/list" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/group.png')}}">
+                    <p class="button__major__text">LIST USERS</p>
+                </a>
+                <a href="/devices/list.html" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/drive_network.png')}}">
+                    <p class="button__major__text">LIST DEVICES</p>
+                </a>
+                <a href="/surveillance" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/monitor.png')}}">
+                    <p class="button__major__text">SURVEILLANCE</p>
+                </a>
+                <a href="#" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/information.png')}}">
+                    <p class="button__major__text">ABOUT</p>
+                </a>
+            </div>
+            
+        </nav>
+        
+    </header>
+    <main class="middle">
         {% block main %} {% endblock %}
     </main>
 
-    <footer>
-        <p class="copyright">MPSS - all rights reserved</p>
-        <p class="footer_warning">
+    <footer class="footer">
+        <p class="footer__copyright">MPSS - all rights reserved</p>
+        <p class="footer__warning">
             we do not take responsability for your life and we will not actually 
             call anyone to help you, no one... can... help you.
         </p>
     </footer>
+    </div>
 </body>
 </html>

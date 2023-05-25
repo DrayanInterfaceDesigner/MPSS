@@ -1,5 +1,16 @@
 import Camera from './Camera.js'
 
+/*
+                            Todo código 
+        [ > ** JS ** (JAVASCRIPT LINGUAGEM DE PROGRAMAÇÃO WEB)< ] 
+                    aqui presente e na integridade deste
+            projeto foi desenvolvido por Drayan Silva Magalhães.
+
+                    MORRAM PROGRAMADORES COM GPT!
+
+            github: https://github.com/drayaninterfacedesigner
+*/
+
 const canvas = document.querySelector(`#camera`)
 const ctx = canvas.getContext(`2d`)
 const video_el = document.querySelector('#videoelement')
@@ -16,9 +27,6 @@ const getTimeString = ()=> {
     const str = cycle + " " + _time + "\n"  + date
     return str
 }
-
-
-
 
 let emergency = false
 btn.addEventListener('click', () => {
@@ -41,7 +49,7 @@ update()
 
 const camera = new Camera(canvas, videoelement, {
     video: { width: config.video_width, height: config.video_height}
-})
+}) 
 
 const main = () => {
     // update()

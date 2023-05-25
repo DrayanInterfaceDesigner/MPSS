@@ -1,0 +1,157 @@
+.user__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2rem 0;
+    background: linear-gradient(180deg, rgba(46,163,194,1) 0%, rgba(118,195,220,1) 2%, rgba(169,226,255,1) 8%, rgba(232,254,252,1) 36%, rgba(237,252,255,1) 74%);
+    border: 1px solid white;
+    outline: 1px solid rgb(184, 182, 182);
+    border-radius: 2px;
+}
+
+.user__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+}
+
+.off {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+.user__fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user__fields input, select {
+    margin: .3rem 0;
+    width: 100%;
+    border: 1px solid rgb(173, 173, 173);
+    padding: .3rem .3rem;
+    border-radius: .2rem;
+}
+
+.user__fields input:focus, select:focus {
+    box-shadow: inset 2px 2px 5px -2px rgb(62, 159, 238);
+    border: 1px solid rgb(61, 140, 238);
+    outline: 1px solid rgba(224, 238, 255, 0.788);
+}
+
+.user__fields__checkbox__container  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    width: 100%;
+    color: rgb(59, 59, 59);
+    margin: 0;
+    padding: 0;
+}
+
+.user__fields__checkbox__container input {
+    width: fit-content;
+    margin: .5rem;
+    cursor: pointer;
+    padding: 0;
+    height: fit-content;
+}
+.user__fields__checkbox__container input:focus{
+    outline: none;
+    padding: 0;
+    background: none;
+}
+
+.user__fields__button__container {
+    /* display: flex; */
+    padding: 0;
+    width: 100%;
+    margin: 1rem 0;
+    border: none;
+}
+
+.user__fields__button__container .button__submit {
+    box-sizing: border-box !important;
+    margin: 0 1rem 0 0;
+    padding: .2rem 2rem;
+    font-size: .8rem;
+    color: rgb(59, 59, 59);
+    background: linear-gradient(180deg, rgba(238,238,238,1) 50%, rgba(221,221,221,1) 50%);
+    box-shadow: 0px 0px 2px 2px rgba(192, 194, 196, 0.4);
+    outline:1px solid rgba(121, 121, 121, 0.788);
+    border: 1px solid rgba(244, 247, 255, 0.938);
+    border-radius: .2rem;
+    cursor: pointer;
+}
+.user__fields__button__container .button__submit:focus,
+.user__fields__button__container .button__submit:hover {
+    border: 1px solid rgba(45,153,247,1);
+    box-shadow: inset 0px 0px 3px 1px rgba(45, 153, 247, 0.712);
+}
+
+.image__box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    margin: 2.5rem 0;
+}
+
+.image__box::after, .image__box::before {
+    content: "";
+    background: linear-gradient(-180deg, rgba(226,241,243,1) 0%, rgba(199,209,213,1) 47%, rgba(174,189,197,1) 47%, rgba(176,207,224,1) 100%);
+    position: absolute;
+    top: 0;
+    left: 3%;
+    right: 3%;
+    bottom: 0;
+    border-radius: 16% / 6%;
+}
+
+.image__box::before {
+    background: linear-gradient(270deg, rgba(226,241,243,1) 0%, rgba(199,209,213,1) 47%, rgba(174,189,197,1) 47%, rgba(176,207,224,1) 100%);
+    transform: rotate(-90deg);
+}
+
+.image__box .image {
+    position: relative;
+    top: 7%;
+    width: 70%;
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background-color: aqua; */
+    z-index: 104;
+    filter: hue-rotate(33deg);
+
+}
+.image__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 87%;
+    height: 87%;
+    z-index: 102;
+    background-color:rgb(67, 148, 224);
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(1, 44, 85, 0.452);
+    border-radius: 4px;
+}
+
+.gambiarra {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    width: 87%;
+    height: 40.5%;
+    z-index: 106;
+    background: linear-gradient(90deg, rgba(217,237,255,.3) 56%, rgba(124,162,200,0) 100%);
+    clip-path: polygon(40.43% 32.28%, 67.89% 22.79%, 100% 19.29%, 100% 0%, 0% 0%, 0% 29.29%, 0% 70.71%, 18.31% 48.82%);clip-path: polygon(61.08% 53.35%, 80.83% 51.29%, 100% 56.51%, 100% 0%, 0% 0%, 0% 29.29%, 0% 100%, 13.17% 82.2%, 26.89% 69.21%, 42.54% 58.64%);
+    transform: translateX(-50%);
+}
+/* background: linear-gradient(-180deg, rgba(156,198,238,1) 0%, rgba(44,130,211,1) 100%); */

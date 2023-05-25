@@ -1,5 +1,6 @@
 from model.db import db
-from model import Person, Address
+from model.people.person import Person
+from model.people.address import Address
 
 class User(db.Model):
     __tablename__ = "user"
