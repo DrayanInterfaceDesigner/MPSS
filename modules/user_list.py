@@ -8,9 +8,9 @@ _user_list = Blueprint("user_list", __name__, static_folder="../static", templat
 @_user_list.route("/", methods=["GET"])
 @login_required
 def user_list():
-    # if(current_user.isAdmin != None):
-    #     users = User.get_users()
-    #     return render_template("user_list.html", users=users)
-    # else:
+    if(current_user.is_Admin):
+        users = User.get_users()
+        return render_template("user_list.html", users=users)
+    else:
         return redirect(url_for("home.authorized"))
 

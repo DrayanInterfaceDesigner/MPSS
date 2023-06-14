@@ -1,30 +1,32 @@
 from flask import Blueprint, render_template, redirect, request
 from modules.controller.list_controller import *
 from flask_login import login_required, current_user
-from model import Device, Sensor
+from model import Device, Sensor, Camera, Actuator
 
 _device = Blueprint("devices", __name__, static_folder="../static", template_folder="../view")
 
 @_device.route("/list", methods=["GET"])
 @login_required
 def device_list():
-    devices = Device.get_devices()
-    return render_template("device_list.html", devices = devices)
+    return render_template("device_list.html")
 
 @_device.route("/list/camera")
 @login_required
 def device_list_camera():
-    return render_template("cameras_list.html")
+    devices = Camera.get_cameras()
+    return render_template("cameras_list.html", devices = devices)
 
 @_device.route("/list/actuator")
 @login_required
 def device_list_actuator():
-    return render_template("actuators_list.html")
+    devices = Actuator.get_actuators()
+    return render_template("actuators_list.html", devices = devices)
 
 @_device.route("/list/sensor")
 @login_required
 def device_list_sensor():
-    return render_template("sensors_list.html")
+    devices = Sensor.get_sensors()
+    return render_template("sensors_list.html", devices = devices)
 
 
 
