@@ -9,6 +9,11 @@
                     <img class="image" src="{{url_for('static', filename='/assets/images/msn_avatar.png')}}">
                 </div>
                 <form class="user__fields" action="/login/auth" method="post">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <p style="color: red;">{{ messages[0] }}</p>
+                    {% endif %}
+                    {% endwith %}
                     <input name="email" id="email" type="email" placeholder="example555@hotmail.com">
                     <input name="password" id="password" type="password" placeholder="Password">
                     <fieldset class="user__fields__button__container">

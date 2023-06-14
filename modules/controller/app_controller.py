@@ -6,6 +6,7 @@ from modules.surveillance import _surveillance
 from modules.user_list import _user_list
 from modules.device import _device
 from modules.intruder import _entity
+from flask_login import LoginManager
 
 from model.db import db, instance
 
@@ -19,6 +20,16 @@ def create_app() -> Flask:
     app.config['SECRET_KEY'] = 'generated-secrete-key'
     app.config["SQLALCHEMY_DATABASE_URI"] = instance
     db.init_app(app)
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'login.auth'
+    login_manager.init_app(app)
+
+    from model import User
+    @login_manager.user_loader
+    def load_user(user_id):
+        # since the user_id is just the primary key of our user table, use it in the query for the user
+        return User.query.get(int(user_id))
 
     app.register_blueprint(_home)
     app.register_blueprint(_register, url_prefix="/register")
