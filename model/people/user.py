@@ -1,8 +1,9 @@
+from flask_login import UserMixin
 from model.db import db
 from model.people.person import Person
 from model.people.address import Address
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = "user"
     id = db.Column(db.Integer(), db.ForeignKey(Person.id), primary_key = True)
     license = db.Column(db.String(45))
