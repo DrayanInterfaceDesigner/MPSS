@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <div class="user__wrapper">
+        <div class="user__container">
+            <div class="image__box">
+                <span class="image__bg"></span>
+                <span class="gambiarra"></span>
+                <img class="image" src="{{url_for('static', filename='/assets/images/msn_avatar.png')}}">
+            </div>
+            <form class="user__fields" action="/register/save" method="POST">
+
+                <input required="required" name="name" id="name"  type="text" placeholder="name">
+                <input required="required" name="email" id="email"  type="email" placeholder="example555@hotmail.com">
+                <input required="required" name="cpf" id="cpf"  type="text" placeholder="000-000-000-00">
+                <input required="required" name="gender" id="gender"  type="text" placeholder="Gender">
+                <input required="required" name="birthday" id="birthday"  type="date" placeholder="birthday">
+                <input required="required" name="phone" id="phone"  type="text" placeholder="phone">
+                <input required="required" name="country" id="country"  type="text" placeholder="country">
+                <input required="required" name="state" id="state"  type="text" placeholder="state">
+                <input required="required" name="city" id="city"  type="text" placeholder="city">
+                <input required="required" name="street" id="street"  type="text" placeholder="street">
+                <input required="required" name="number" id="number"  type="text" placeholder="number">
+                <input required="required" name="zip_code" id="zip_code"  type="text" placeholder="postal code">
+                <input required="required" name="complement" id="complement"  type="text" placeholder="complement">
+                <input required="required" name="password" id="password"  type="password" placeholder="Password">
+                <input required="required" id="pwrpt" type="password" placeholder="Repeat your password">
+
+                <fieldset class="user__fields__button__container">
+                    <button id="send" type="submit" class="button__submit">Enter</button>
+                    <button type="button" value="Register" class="button__submit" onclick="window.location = '/'">Cancel</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

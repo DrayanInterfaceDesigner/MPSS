@@ -2,36 +2,79 @@
 
 {% block main %}
     <div class="surveillance">
-        <div class="surveillance__camera">
-            <p class="text"></p>
-            <div class="tx_radial"></div>
-                
-            <canvas id="camera"></canvas>
-        </div>
-        
-        <div class="surveillance__monitoring">
-            <div class="monitoring__tabs">
-                {% for name, diagnosis in devices %}
-                <div class="monitoring__tabs__tab">
-                    <p class="tab__name">{{name}}</p>
-                    <div class="tab__monitor">
-                            <button class="switch__button">(simular detecção prototipo)</button>  
-                        <div class="diagnosis">
-                            <canvas id={{diagnosis}}></canvas>
+        <div class="surveillance__wrapper">
+            <div class="surveillance__container">
+                <div class="surveillance__camera woodbox">
+                    <div class="surveillance__tv__container">
+                        <div class="camera__container">
+                            <div class="surveillance__camera__container">
+                                <p class="text"></p>
+                                <div class="tx_radial"></div>
+                                <canvas id="camera"></canvas>
+                            </div>
                         </div>
+                        <img class="surveillance__tv" src="{{url_for('static', filename='assets/images/tv.png')}}">
                     </div>
-                </div>
-                {% endfor %}
             </div>
         </div>
-
-        <div class="surveillance__emergency">
-            <form action="/emergency" method="post">
-                <button class="emergency__button">[190]</button>
-            </form>
+            <!-- <div class="surveillance__camera__container">
+                <p class="text"></p>
+                <div class="tx_radial"></div>
+                <canvas id="camera"></canvas>
+            </div> -->
+        </div>
+        
+        <div class="monitoring__grid">
+            <div class="surveillance__monitoring">
+                <div class="monitoring__tabs">
+                    {% for name, diagnosis in devices %}
+                    <div class="monitoring__tabs__tab" style="display: none;">
+                        <p class="tab__name">{{name}}</p>
+                        <div class="tab__monitor">
+                                <button class="switch__button">(simular detecção prototipo)</button>  
+                            <div class="diagnosis">
+                                <!-- <canvas id={{diagnosis}}></canvas> -->
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="monitoring__tabs__container">
+                        <div class="monitoring__panel__container woodbox" style="background:url(/static/images/panel.png)">
+                    
+                            <img class="monitoring__panel" src="{{url_for('static', filename='assets/images/panel.png')}}">
+                            <span class="monitoring__led"></span>
+                            <span class="monitoring__led2"></span>
+                            <span class="monitoring__lever">
+                                <img src="{{url_for('static', filename='assets/images/lever.png')}}">
+                            </span>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+    
+            <div class="surveillance__emergency">
+                <form >
+                    <div class="emergency__container">
+                        <div class="emergency__panel__container woodbox">
+                            <div class=" emergency__button emergency__button__container">
+                                <img class="emergency__button" src="{{url_for('static', filename='assets/images/button_up.png')}}">
+                            </div>
+                            <div class="emergency__display__container">
+                                <div class="emergency__text">
+                                    <p>apsdkop skadkp a as ss fdf</p>
+                                </div>
+                                <img class="emergency__button emergency__display" src="{{url_for('static', filename='assets/images/lcd.png')}}">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <video autoplay muted hidden id="videoelement"></video>
+    <script defer type="module" src="{{url_for('static', filename='js/utils.js')}}"></script>
+    <script defer type="module" src="{{url_for('static', filename='js/Surveillance.js')}}"></script>
     <script defer type="module" src="{{url_for('static', filename='js/Camera.js')}}"></script>
     <script defer type="module" src="{{url_for('static', filename='js/main.js')}}"></script>
 

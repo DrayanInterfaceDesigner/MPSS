@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <div class="user__wrapper">
+        <div class="user__container">
+            <div class="image__box">
+                <span class="image__bg"></span>
+                <span class="gambiarra"></span>
+                <img class="image" src="{{url_for('static', filename='/assets/icons/drive_add.png')}}">
+            </div>
+            <form class="user__fields" action="/devices/save" method="post">
+
+                <input required="required" name="name" id="name"  type="text" placeholder="name">
+                <input required="required" name="brand" id="brand"  type="text" placeholder="brand">
+                <input required="required" name="model" id="model"  type="text" placeholder="model">
+                <input required="required" name="voltage" id="voltage"  type="text" placeholder="voltage">
+                <input required="required" name="description" id="description"  type="text" placeholder="description">
+                <select required="required" name="type" id="type">
+                    <option value="sensor">Sensor</option>
+                    <option value="camera">Camera</option>
+                </select>
+                <fieldset class="user__fields__checkbox__container">
+                    <p>isActive?</p>
+                    <input type="checkbox" id="status" name="status"/>
+                </fieldset>
+
+                <fieldset class="user__fields__button__container">
+                    <button id="send" type="submit" value="Register" class="button__submit">Register</button>
+                    <button type="button" class="button__submit" onclick="window.location = '/'">Cancel</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}

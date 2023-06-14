@@ -7,31 +7,55 @@
             <p class="list__tab__name">List Devices</p>
         </div>
         <div class="list__container">
-            <div class="list">
-                <table class="list__table">
-                    <tr class="list__table__header">
-                        <th class="list__table__title">ID</th>
-                        <th class="list__table__title">Name</th>
-                        <th class="list__table__title">Brand</th>
-                        <th class="list__table__title">Model</th>
-                        <th class="list__table__title">Voltage</th>
-                        <th class="list__table__title">Description</th>
-                        <th class="list__table__title">Status</th>
-                    </tr>
-                    {% for device in devices %}
-                        <tr class="list__table__content">
-                            <!-- <svg class="user__icon"></svg> -->
-                            <td class="list__table__title">{{device.id}}</td>
-                            <td class="list__table__title">{{device.name}}</td>
-                            <td class="list__table__title">{{device.brand}}</td>
-                            <td class="list__table__title">{{device.model}}</td>
-                            <td class="list__table__title">{{device.voltage}}</td>
-                            <td class="list__table__title">{{device.description}}</td>
-                            <td class="list__table__title">{{device.status}}</td>
-                        </tr>
-                    {% endfor %}
-                    
-                </table>
+            <div class="list__container">
+                <div class="list__container__wrapper">
+                    <div class="list__carrousel">
+
+                        <a href="/devices/list/camera">
+                        <div class="floating__item">
+                            
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/camera.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                
+                                    <p class="floating__item__title">
+                                        Lists Camera
+                                    </p>
+                                
+                            </div>
+                        </div>
+                        </a>
+    
+                        <a href="/devices/list/actuator">
+                        <div class="floating__item">
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/drive.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                <p class="floating__item__title">
+                                    List Actuadors
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+    
+                        <a href="/devices/list/sensor">
+                        <div class="floating__item">
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/ipod_cast.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                <p class="floating__item__title">
+                                    List Sensors
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+                        
+    
+                    </div>
+                </div>
             </div>
         </div>
     </section>

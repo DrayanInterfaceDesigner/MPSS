@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPSS</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/background.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/list.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/button.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/footer.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/camera.css')}}">
+
+    <script defer type="module" src="{{url_for('static', filename='js/index.js')}}"></script>
+
+    <!-- <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./background.css">
+    <link rel="stylesheet" href="./list.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./button.css">
+    <link rel="stylesheet" href="./footer.css"> -->
+
+
+
+</head>
+<body>
+
+    <div class="bg"></div>
+    <div class="app">
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <a class="navbar__logo__link" href="#"><img class="navbar__logo__img" src="{{url_for('static', filename='/assets/images/logo.png')}}"></a>
+            </div>
+            <div class="navbar__menu">
+                <a href="/" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/house.png')}}">
+                    <p class="button__major__text">HOME</p>
+                </a>
+                <a href="/login" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/status_online.png')}}">
+                    <p class="button__major__text">LOGIN</p>
+                </a>
+                <a href="/register" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/door_in.png')}}">
+                    <p class="button__major__text">SIGN UP</p>
+                </a>
+            </div>
+            
+        </nav>
+        
+    </header>
+    <main class="middle">
+        {% block main %} {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">MPSS - all rights reserved</p>
+        <p class="footer__warning">
+            we do not take responsability for your life and we will not actually 
+            call anyone to help you, no one... can... help you.
+        </p>
+    </footer>
+    </div>
+</body>
+</html>

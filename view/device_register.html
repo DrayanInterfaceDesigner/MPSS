@@ -1,35 +1,62 @@
 {% extends "base.html" %}
 
 {% block main %}
-
-    <div class="user__wrapper">
-        <div class="user__container">
-            <div class="image__box">
-                <span class="image__bg"></span>
-                <span class="gambiarra"></span>
-                <img class="image" src="{{url_for('static', filename='/assets/icons/drive_add.png')}}">
-            </div>
-            <form class="user__fields" action="/devices/save" method="post">
-
-                <input required="required" name="name" id="name"  type="text" placeholder="name">
-                <input required="required" name="brand" id="brand"  type="text" placeholder="brand">
-                <input required="required" name="model" id="model"  type="text" placeholder="model">
-                <input required="required" name="voltage" id="voltage"  type="text" placeholder="voltage">
-                <input required="required" name="description" id="description"  type="text" placeholder="description">
-                <select required="required" name="type" id="type">
-                    <option value="sensor">Sensor</option>
-                    <option value="camera">Camera</option>
-                </select>
-                <fieldset class="user__fields__checkbox__container">
-                    <p>isActive?</p>
-                    <input type="checkbox" id="status" name="status"/>
-                </fieldset>
-
-                <fieldset class="user__fields__button__container">
-                    <button id="send" type="submit" value="Register" class="button__submit">Register</button>
-                    <button type="button" class="button__submit" onclick="window.location = '/'">Cancel</button>
-                </fieldset>
-            </form>
+    <section class="list__window">
+        <div class="list__tab">
+            <img class="list__tab__icon" src="{{url_for('static', filename='/assets/icons/drive_network.png')}}">
+            <p class="list__tab__name">List Devices</p>
         </div>
-    </div>
+        <div class="list__container">
+            <div class="list__container">
+                <div class="list__container__wrapper">
+                    <div class="list__carrousel">
+
+                        <a href="/devices/register/camera">
+                        <div class="floating__item">
+                            
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/camera_add.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                
+                                    <p class="floating__item__title">
+                                        Register Camera
+                                    </p>
+                                
+                            </div>
+                        </div>
+                        </a>
+    
+                        <a href="/devices/register/actuator">
+                        <div class="floating__item">
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/drive_add.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                <p class="floating__item__title">
+                                    Register Actuador
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+    
+                        <a href="/devices/register/sensor">
+                        <div class="floating__item">
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/ipod_cast_add.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                <p class="floating__item__title">
+                                    Register Sensor
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+                        
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

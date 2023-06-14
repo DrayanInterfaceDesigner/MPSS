@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <section class="list__window">
+        <div class="list__tab">
+            <img class="list__tab__icon" src="{{url_for('static', filename='/assets/icons/drive_network.png')}}">
+            <p class="list__tab__name">List Devices</p>
+        </div>
+        <div class="list__container">
+            <div class="list__container">
+                <div class="list__container__wrapper">
+                    <div class="list__carrousel">
+
+                        <a href="/devices/register/camera">
+                        <div class="floating__item">
+                            
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/camera_add.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                
+                                    <p class="floating__item__title">
+                                        Register Camera
+                                    </p>
+                                
+                            </div>
+                        </div>
+                        </a>
+    
+                        <a href="/devices/register/actuator">
+                        <div class="floating__item">
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/drive_add.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                <p class="floating__item__title">
+                                    Register Actuador
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+    
+                        <a href="/devices/register/sensor">
+                        <div class="floating__item">
+                            <div class="floating__item__top">
+                                <img class="floating__item__icon" src="{{url_for('static', filename='/assets/icons/ipod_cast_add.png')}}">
+                            </div>
+                            <div class="floating__item__bottom">
+                                <p class="floating__item__title">
+                                    Register Sensor
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+                        
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

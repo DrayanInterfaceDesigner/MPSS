@@ -1,14 +1,250 @@
+@import url('https://fonts.cdnfonts.com/css/digital');
+
+.surveillance {
+    display: grid;
+    grid-template-areas: 
+    "camera monitoring"
+    "camera monitoring";
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: limegreen;
+    background-image: url(/static/assets/images/background.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.surveillance__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.surveillance__camera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: camera;
+    /* background-color: blueviolet; */
+}
+
+.monitoring__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: monitoring;
+    /* background-color: chocolate; */
+}
+
+.surveillance__monitoring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    /* background-color: brown; */
+}
+
+
+.monitoring__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+    background-color: aqua;
+}
+
+.monitoring__tabs__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    object-fit: cover;
+    /* background-image: url(/static/assets/images/panel.png);
+    background-size:cover;
+    background-repeat: no-repeat; */
+}
+
+.monitoring__panel, .emergency__display, .emergency__button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+
+}
+
+.emergency__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.emergency__panel__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    /* background-color: rgb(34, 8, 3);
+    padding: .3rem; */
+
+}
+.emergency__button__container {
+    width: 10vw;
+    cursor: pointer;
+}
+.emergency__display__container {
+    position: relative;
+    width: 15vw;
+    margin-left: .3rem;
+}
+.emergency__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 40%;
+    font-size: 1.3vw;
+    /* background-color: lime; */
+    font-family: 'Digital', sans-serif;
+    font-weight: 800;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.emergency__text p {
+    margin: .2rem .5rem .5rem .5rem;
+}
+.monitoring__panel__container {
+    position: relative;
+    width: 30vw;
+    height: 20vw;
+    background-size: 100%;
+    filter: brightness(70%);
+    /* background-color:yellowgreen; */
+}
+
+.monitoring__lever__wrapper {
+    position: absolute;
+    top: 16vw;
+    left: 25vw;
+    transform: translateY(-2rem);
+}
+
+.monitoring__lever {
+    height: 4vw;
+}
+
+.monitoring__led {
+    position: absolute;
+    top: 10vw;
+    right: 5vw;
+    width: 2vw;
+    height: 2vw;
+    background-color: red;
+    border-radius: 5rem;
+    filter: blur(13px);
+}
+
+.monitoring__led2 {
+    position: absolute;
+    top: 10vw;
+    right: 5vw;
+    width: 1vw;
+    height: 1vw;
+    background-color: rgb(255, 233, 233);
+    border-radius: 5rem;
+    filter: blur(8px) brightness(200%);
+}
+
+
+.monitoring__lever {
+    position: absolute;
+    top: 13vw;
+    right: 4vw;
+    width: 1.3vw;
+    height: 3vw;
+    /* background-color: red; */
+    cursor: pointer;
+}
+.monitoring__lever img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: brightness(200%);
+    box-shadow: 0 0 12px rgba(255,255,255,1);
+}
+.monitoring__lever img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3vw;
+    height: 3vw;
+    background-color: rgb(255, 233, 233);
+    border-radius: 5rem;
+    filter: blur(8px) brightness(200%);
+    z-index: 99;
+    /* filter: brightness(200%); */
+}
+/* 
+.tv__button {
+    position: absolute;
+    top: 8vw;
+    right: 5vw;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 5rem;
+    z-index: 99999 !important;
+}
+.tv__button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+} */
+
+
+
 #camera {
     position: relative;
     width: 100%;
     height: 100%;
-    filter: brightness(300%) contrast(130%) saturate(500%);
+    filter: brightness(200%) contrast(130%) saturate(300%);
 }
+
 .surveillance__camera {
     position: relative;
-    width: fit-content;
-    height: fit-content;
+    overflow: hidden;
+}
+.surveillance__container {
+    width: 80%;
+}
+.surveillance__tv__container {
+    position: relative;
+    /* background-color: crimson; */
+}
+.surveillance__camera__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
     border: .3rem solid transparent;
+}
+
+.surveillance__tv {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.camera__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:  90%;
+    /* background-color: lime; */
+    transform: translate(-60%, -60%);
 }
 
 .tx_radial {
@@ -23,10 +259,10 @@
 .text {
     position: absolute;
     bottom: 5%;
-    left:   5%;
+    left:   18%;
     z-index: 101;
     color: white;
-    font-size: 1rem;
+    font-size: calc(.5rem + .5vw);
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -60,4 +296,32 @@
     100% {
         opacity: 0;
     }
+}
+
+
+.woodbox {
+    background-color: rgb(12, 2, 1);
+    padding: .3rem;
+    border-radius: .2rem;
+    border: 1px solid #ffc29985;
+}
+
+.emergency__button {
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.off {
+    opacity: 0;
+}
+
+.flip {
+    transform: translateY(50%) scaleY(-1);
 }

@@ -9,3 +9,9 @@ _entity = Blueprint("entities", __name__, static_folder="../static", template_fo
 def entity_list():
     entities = Entity.get_entities()
     return render_template("entity_list.html", entities = entities)
+
+@_entity.route("/register", methods=["GET"])
+def entity_register():
+    entities = Entity.get_entities()
+    return render_template("entity_register.html", entities = entities)
+
