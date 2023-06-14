@@ -5,3 +5,7 @@ _login = Blueprint("login", __name__, static_folder="../static", template_folder
 @_login.route("/", methods=["GET", "POST"])
 def login():
     return render_template("login.html")
+
+# @_login.route("/in", methods=["GET", "POST"])
+# def login():
+#     return render_template("login.html")

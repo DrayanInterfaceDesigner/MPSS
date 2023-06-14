@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPSS</title>
+
     <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/background.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
@@ -14,6 +15,8 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/button.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/footer.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/camera.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/carrousel.css')}}">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='/assets/images/application_xp_terminal.ico')}}">
 
     <script defer type="module" src="{{url_for('static', filename='js/index.js')}}"></script>
 
@@ -42,13 +45,29 @@
                     <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/house.png')}}">
                     <p class="button__major__text">HOME</p>
                 </a>
-                <a href="/login" class="button__major">
-                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/status_online.png')}}">
-                    <p class="button__major__text">LOGIN</p>
+                <a href="/devices/register" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/drive_add.png')}}">
+                    <p class="button__major__text">REGISTER DEVICES</p>
                 </a>
-                <a href="/register" class="button__major">
-                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/door_in.png')}}">
-                    <p class="button__major__text">SIGN UP</p>
+                <a href="/entities/register" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/group_add.png')}}">
+                    <p class="button__major__text">REGISTER INTRUDER</p>
+                </a>
+                <a href="/entities/list" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/report_user.png')}}">
+                    <p class="button__major__text">LIST INTRUDERS</p>
+                </a>
+                <a href="/devices/list" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/drive_network.png')}}">
+                    <p class="button__major__text">LIST DEVICES</p>
+                </a>
+                <a href="/surveillance" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/monitor.png')}}">
+                    <p class="button__major__text">SURVEILLANCE</p>
+                </a>
+                <a href="#" class="button__major">
+                    <img class="button__major__icon" src="{{url_for('static', filename='/assets/icons/information.png')}}">
+                    <p class="button__major__text">ABOUT</p>
                 </a>
             </div>
             
