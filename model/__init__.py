@@ -9,3 +9,4 @@ from model.entities.entity import Entity
 from model.devices.device import Device
 from model.devices.sensor import Sensor
 from model.devices.camera import Camera
+from model.devices.actuator import Actuator
