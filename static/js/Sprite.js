@@ -19,4 +19,5 @@ export class Sprite extends Entity {
     render(ctx) {
         ctx.drawImage(this.image, this.position.x, this.position.y, this.size.w, this.size.h)
     }
+    
 }

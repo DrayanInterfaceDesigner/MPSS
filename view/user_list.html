@@ -1,20 +1,33 @@
 {% extends "base.html" %}
 
 {% block main %}
-    <div class="list">
-        <p>List:</p>
-        <table class="list__items">
-            <tr>
-                <th>id</th>
-                <th>name</th>
-            </tr>
-            {% for user in users %}
-                <tr class="item">
-                    <!-- <svg class="user__icon"></svg> -->
-                    <td class="item__info">{{user.id}}</td>
-                    <td class="item__info">{{user.name}}</td>
-                </tr>
-            {% endfor %}
-            </table>
+<section class="list__window">
+    <div class="list__tab">
+        <img class="list__tab__icon" src="{{url_for('static', filename='/assets/icons/report_user.png')}}">
+        <p class="list__tab__name">List Intruders</p>
     </div>
+    <div class="list__container">
+        <div class="list">
+            <table class="list__table">
+                <tr class="list__table__header">
+                    <th class="list__table__title">ID</th>
+                    <th class="list__table__title">Name</th>
+                    <th class="list__table__title">Description</th>
+                    <th class="list__table__title">First Seen</th>
+                </tr>
+                {% for entity in entities %}
+                    <tr class="list__table__content">
+                        <!-- <svg class="user__icon"></svg> -->
+                        <td class="list__table__title">{{entity.id}}</td>
+                        <td class="list__table__title">{{entity.name}}</td>
+                        <td class="list__table__title">{{entity.description}}</td>
+                        <td class="list__table__title">{{entity.first_seen}}</td>
+                    </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+    </div>
+    
+</section>
 {% endblock %}

@@ -12,6 +12,7 @@ export class StaticBody extends Entity {
         this.setup()
     }
     _physics_process(delta) {
+        
     }
     setup() {
         super.setup()
