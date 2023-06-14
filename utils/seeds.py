@@ -11,6 +11,9 @@ def generate_seeds(db:SQLAlchemy):
                  license = "license", username = "rafaelbaguncas", email = "drayan@mpss.com", password = generate_password_hash("sexo123"), state = "PR", 
                  city = "Curitiba", country = "Brazil", street = "Rua dos memes", number = "69", complement = "ap.420", zip_code = "80123123")
     
+    User.make_admin(0)
+    User.make_admin(1)
+    
     # db.session.add_all([user1, user2])
     # db.session.commit()
 
