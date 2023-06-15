@@ -78,4 +78,22 @@ const getTimeString = ()=> {
     return str
 }
 
+// setInterval(()=>{
+//     const eventSource = new EventSource('/stream');
+
+//         eventSource.onmessage = function (event) {
+//             const message = event.data;
+//             console.log('Received message:', message);
+//             // Process the received message as needed
+//         };
+// }, 5500)
+
+const eventSource = new EventSource('/stream');
+
+eventSource.onmessage = function (event) {
+    const message = event.data;
+    console.log('Received message:', message)
+    // Process the received message as needed
+}
+
 setLCDText("NO EMERGENCIES SINCE : " + last_emergency_hour)
