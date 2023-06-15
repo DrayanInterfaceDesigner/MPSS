@@ -68,7 +68,7 @@ monitoring__lever.addEventListener("click", ()=> {
     monitoring__lever__image.classList.toggle("flip")
     last_emergency_hour = getTimeString()
     setLCDText("NO EMERGENCIES SINCE : " + last_emergency_hour)
-    toggleLights()
+    setLightsOff()
 })
 
 const getTimeString = ()=> {
@@ -88,11 +88,14 @@ const getTimeString = ()=> {
 //         };
 // }, 5500)
 
-const eventSource = new EventSource('/stream');
+const eventSource = new EventSource('/surveillance/stream')
+
 
 eventSource.onmessage = function (event) {
     const message = event.data;
     console.log('Received message:', message)
+    setLCDText(message + " \n" + getTimeString())
+    setLightsOn()
     // Process the received message as needed
 }
 
