@@ -88,7 +88,7 @@ const getTimeString = ()=> {
 //         };
 // }, 5500)
 
-const eventSource = new EventSource('/response')
+const eventSource = new EventSource('/surveillance/stream')
 
 
 eventSource.onmessage = function (event) {

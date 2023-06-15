@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
 from modules.home import _home
 from modules.register import _register
 from modules.login import _login
@@ -6,13 +6,12 @@ from modules.surveillance import _surveillance
 from modules.user_list import _user_list
 from modules.device import _device
 from modules.intruder import _entity
-from flask_login import LoginManager
+from flask_login import LoginManager, login_required, current_user
 from flask_mqtt import Mqtt
 from model.mqtt import mqtt_client, topic_subscribe
 from model.db import db, instance
 from model import User, Read
 from datetime import datetime
-import time
 
 
 def create_app() -> Flask:
@@ -45,13 +44,24 @@ def create_app() -> Flask:
     app.register_blueprint(_device, url_prefix="/devices")
     app.register_blueprint(_entity, url_prefix="/entities")
 
-    @app.route('/')
-    def index():
+    @app.route("/", methods=["GET", "POST"])
+    def home():
         return render_template("home.html")
     
-    @app.route('/response')
-    def response(data):
-        return Response(data, mimetype='text/event-stream')
+    @app.route('/stream')
+    def stream():
+        def event_stream():
+            with app.app_context():
+                while True:
+                    message = mqtt_client._mqttc.loop_read()
+                    if message is not None:
+                        payload=message.payload.decode()
+                        yield payload
+        return Response(event_stream(), mimetype="text/event-stream")
+    
+    @app.route('/ronaldo')
+    def ronaldo():
+        return "ronaldo"
     
     @login_manager.user_loader
     def load_user(user_id):
@@ -81,6 +91,5 @@ def create_app() -> Flask:
             db.session.commit()
         
         print('Received message at {now} on topic: {topic} with payload: {payload}'.format(**data))
-        return response(data)
 
     return app
