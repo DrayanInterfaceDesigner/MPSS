@@ -13,7 +13,8 @@ from model.db import db, instance
 from model import User, Read
 from datetime import datetime
 import time
-
+import requests
+import json
 
 def create_app() -> Flask:
     app = Flask(__name__, template_folder="./view/",
@@ -58,6 +59,7 @@ def create_app() -> Flask:
         # since the user_id is just the primary key of our user table, use it in the query for the user
         return User.query.get(int(user_id))
     
+
     @mqtt_client.on_connect()
     def handle_connect(client, userdata, flags, rc):
         if rc == 0:
