@@ -4,24 +4,28 @@
 <section class="list__window">
     <div class="list__tab">
         <img class="list__tab__icon" src="{{url_for('static', filename='/assets/icons/report_user.png')}}">
-        <p class="list__tab__name">List Intruders</p>
+        <p class="list__tab__name">Users 😈</p>
     </div>
     <div class="list__container">
         <div class="list">
             <table class="list__table">
                 <tr class="list__table__header">
                     <th class="list__table__title">ID</th>
+                    <th class="list__table__title">Username</th>
                     <th class="list__table__title">Name</th>
-                    <th class="list__table__title">Description</th>
-                    <th class="list__table__title">First Seen</th>
+                    <th class="list__table__title">CPF</th>
+                    <th class="list__table__title">Gender</th>
+                    <th class="list__table__title">License</th>
                 </tr>
-                {% for entity in users %}
+                {% for user in users %}
                     <tr class="list__table__content">
                         <!-- <svg class="user__icon"></svg> -->
-                        <td class="list__table__title">{{entity.id}}</td>
-                        <td class="list__table__title">{{entity.name}}</td>
-                        <td class="list__table__title">{{entity.description}}</td>
-                        <td class="list__table__title">{{entity.first_seen}}</td>
+                        <td class="list__table__title">{{user.id}}</td>
+                        <td class="list__table__title">{{user.username}}</td>
+                        <td class="list__table__title">{{user.name}} | o + brabo d {{user.city}} 🥵</td>
+                        <td class="list__table__title">{{user.cpf}}</td>
+                        <td class="list__table__title">{{user.gender}}</td>
+                        <td class="list__table__title">{{user.license}}</td>
                     </tr>
                 {% endfor %}
                 

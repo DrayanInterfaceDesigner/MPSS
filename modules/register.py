@@ -7,7 +7,7 @@ _register = Blueprint("register", __name__, static_folder="../static", template_
 
 @_register.route("/", methods=["GET", "POST"])
 def register():
-    return render_template("register.html")
+    return render_template("/login/register.html")
 
 @_register.route("/save", methods = ["POST"])
 def save():
@@ -34,4 +34,4 @@ def save():
     User.save_user(name, cpf, gender, birth_date, phone, license, username, email,
                   password, state, city, country, street, number, complement, zip_code)
 
-    return redirect("../")
+    return redirect("/login")

@@ -11,8 +11,13 @@ def generate_seeds(db:SQLAlchemy):
                  license = "license", username = "rafaelbaguncas", email = "drayan@mpss.com", password = generate_password_hash("sexo123"), state = "PR", 
                  city = "Curitiba", country = "Brazil", street = "Rua dos memes", number = "69", complement = "ap.420", zip_code = "80123123")
     
-    User.make_admin(0)
+    for x in range(15):
+        User.save_user(name = f"User{x}", cpf = f"99999{x+10}", gender = "M", birth_date = datetime.strptime("2002-01-01", "%Y-%m-%d"), phone = "41999999999", 
+                 license = "license", username = f"username{x}", email = f"user{x}@mpss.com", password = generate_password_hash("sexo123"), state = "PR", 
+                 city = "Curitiba", country = "Brazil", street = "Rua dos memes", number = "69", complement = "ap.420", zip_code = f"8012312{x}")
+    
     User.make_admin(1)
+    User.make_admin(2)
     
     # db.session.add_all([user1, user2])
     # db.session.commit()

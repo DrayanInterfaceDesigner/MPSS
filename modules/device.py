@@ -50,9 +50,27 @@ def device_register_actuator():
 def device_register_sensor():
     return render_template("sensor_register.html")
 
-@_device.route("/save", methods=["POST"])
+@_device.route("/register/camera/save", methods=["POST"])
 @login_required
-def device_save():
+def camera_save():
+    name = request.form.get("name")
+    brand = request.form.get("brand")
+    model = request.form.get("model")
+    description = request.form.get("description")
+    voltage = request.form.get("voltage")
+    status_checkbox = request.form.get("status")
+    resolution = request.form.get("resolution")
+    status = False
+    if status_checkbox == 'on':
+        status = True
+
+    Camera.save_camera(name, brand, model, description, voltage, status, resolution)
+
+    return redirect('/devices/list/camera')
+
+@_device.route("/register/sensor/save", methods=["POST"])
+@login_required
+def sensor_save():
     name = request.form.get("name")
     brand = request.form.get("brand")
     model = request.form.get("model")
@@ -66,4 +84,22 @@ def device_save():
 
     Sensor.save_sensor(name, brand, model, description, voltage, status, measure)
 
-    return redirect('/devices/list')
+    return redirect('/devices/list/sensor')
+
+@_device.route("/register/actuator/save", methods=["POST"])
+@login_required
+def actuator_save():
+    name = request.form.get("name")
+    brand = request.form.get("brand")
+    model = request.form.get("model")
+    description = request.form.get("description")
+    voltage = request.form.get("voltage")
+    status_checkbox = request.form.get("status")
+    _type = request.form.get("type")
+    if status_checkbox == 'on':
+        status = True
+
+    Sensor.save_sensor(name, brand, model, description, voltage, status, _type)
+
+    return redirect('/devices/list/actuator')
+
