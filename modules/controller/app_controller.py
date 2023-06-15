@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
 from modules.home import _home
 from modules.register import _register
 from modules.login import _login
@@ -49,6 +49,10 @@ def create_app() -> Flask:
     def index():
         return render_template("home.html")
     
+    @app.route('/response')
+    def response(data):
+        return Response(data, mimetype='text/event-stream')
+    
     @login_manager.user_loader
     def load_user(user_id):
         # since the user_id is just the primary key of our user table, use it in the query for the user
@@ -76,7 +80,7 @@ def create_app() -> Flask:
             db.session.add(presence)
             db.session.commit()
         
-
         print('Received message at {now} on topic: {topic} with payload: {payload}'.format(**data))
+        return response(data)
 
     return app

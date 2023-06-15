@@ -21,8 +21,6 @@ def stream():
             yield f'data: Message {i}\n\n'
             time.sleep(1)  # Delay between updates
 
-    return Response(generate_events(), mimetype='text/event-stream')
-
 @_surveillance.route("/emergency", methods=["GET", "POST"])
 @login_required
 def emergency():
