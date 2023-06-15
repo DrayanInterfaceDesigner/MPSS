@@ -44,24 +44,9 @@ def create_app() -> Flask:
     app.register_blueprint(_device, url_prefix="/devices")
     app.register_blueprint(_entity, url_prefix="/entities")
 
-    @app.route("/", methods=["GET", "POST"])
+    @app.route("/")
     def home():
         return render_template("home.html")
-    
-    @app.route('/stream')
-    def stream():
-        def event_stream():
-            with app.app_context():
-                while True:
-                    message = mqtt_client._mqttc.loop_read()
-                    if message is not None:
-                        payload=message.payload.decode()
-                        yield payload
-        return Response(event_stream(), mimetype="text/event-stream")
-    
-    @app.route('/ronaldo')
-    def ronaldo():
-        return "ronaldo"
     
     @login_manager.user_loader
     def load_user(user_id):

@@ -20,7 +20,6 @@ def stream():
         for i in range(1, 6):
             yield f'data: Message {i}\n\n'
             time.sleep(1)  # Delay between updates
-    return Response(generate_events(), mimetype='text/event-stream')
 
     return Response(generate_events(), mimetype='text/event-stream')
 
