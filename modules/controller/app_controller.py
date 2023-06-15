@@ -75,6 +75,7 @@ def create_app() -> Flask:
             presence = Read(date_time=datetime.now(), message=message.payload.decode())
             db.session.add(presence)
             db.session.commit()
+        
 
         print('Received message at {now} on topic: {topic} with payload: {payload}'.format(**data))
 
