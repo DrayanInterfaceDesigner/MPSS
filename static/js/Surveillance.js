@@ -12,6 +12,7 @@ let monitoring__lever__image = monitoring__lever.querySelector("img")
 
 let emergency__button__status = false
 let last_emergency_hour = "n o n e"
+let last_message = null
 
 
 const setLightsOff = () => {
@@ -66,8 +67,7 @@ emergency__button.addEventListener("mouseup", ()=> {
 
 monitoring__lever.addEventListener("click", ()=> {
     monitoring__lever__image.classList.toggle("flip")
-    last_emergency_hour = getTimeString()
-    setLCDText("NO EMERGENCIES SINCE : " + last_emergency_hour)
+    setLCDText(last_message + " : " + last_emergency_hour)
     setLightsOff()
 })
 
@@ -88,14 +88,15 @@ const getTimeString = ()=> {
 //         };
 // }, 5500)
 
-const eventSource = new EventSource('/surveillance/stream')
+const eventSource = new EventSource('/response')
 
 
 eventSource.onmessage = function (event) {
     const message = event.data;
     console.log('Received message:', message)
-    setLCDText(message + " \n" + getTimeString())
-    setLightsOn()
+    setLCDText("New message received!")
+    last_message = message
+    last_emergency_hour = getTimeString()
     // Process the received message as needed
 }
 
