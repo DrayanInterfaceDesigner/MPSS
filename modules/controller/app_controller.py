@@ -12,9 +12,6 @@ from model.mqtt import mqtt_client, topic_subscribe
 from model.db import db, instance
 from model import User, Read
 from datetime import datetime
-import time
-import requests
-import json
 
 def create_app() -> Flask:
     app = Flask(__name__, template_folder="./view/",
