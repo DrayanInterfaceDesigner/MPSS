@@ -48,6 +48,16 @@ emergency__button.addEventListener("click", async () => {
         emergency__button__img.setAttribute("src", "/static/assets/images/button_up.png")
         emergency__button__status = false
     }
+    try {
+        const response = await fetch("/surveillance/emergency");
+        if (response.ok) {
+          console.log(response)
+        } else {
+          console.log("Error loading image:", response.status)
+        }
+      } catch (error) {
+        console.log("Error:", error)
+    }
 })
 
 emergency__button.addEventListener("mouseup", ()=> {
