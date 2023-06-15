@@ -13,6 +13,8 @@ let monitoring__lever__image = monitoring__lever.querySelector("img")
 let emergency__button__status = false
 let last_emergency_hour = "n o n e"
 let last_message = null
+let messages = new Array()
+let lever_stts = false
 
 
 const setLightsOff = () => {
@@ -69,6 +71,7 @@ monitoring__lever.addEventListener("click", ()=> {
     monitoring__lever__image.classList.toggle("flip")
     setLCDText(last_message + " : " + last_emergency_hour)
     setLightsOff()
+    lever_stts = !lever_stts
 })
 
 const getTimeString = ()=> {
@@ -91,12 +94,19 @@ const getTimeString = ()=> {
 const eventSource = new EventSource('/surveillance/stream')
 
 
-eventSource.onmessage = function (event) {
-    const message = event.data;
+eventSource.onmessage = async function (event) {
+    const message = await event.data;
     console.log('Received message:', message)
-    setLCDText("New message received!")
+    messages.push(message)
     last_message = message
     last_emergency_hour = getTimeString()
+    if(!lever_stts) {
+        setLightsOn()
+        setLCDText(`Intruder Detected! [ ${messages.length} ]`)
+    }
+    else {
+        setLCDText(last_message + "\n" + last_emergency_hour)
+    }
     // Process the received message as needed
 }
 
